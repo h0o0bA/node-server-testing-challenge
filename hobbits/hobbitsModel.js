@@ -4,7 +4,8 @@ module.exports = {
   add,
   getAll,
   findBy,
-  findById
+  findById,
+  remove
 };
 
 function getAll() {
@@ -28,4 +29,10 @@ function findById(id) {
   return db("hobbits")
     .where({ id })
     .first();
+}
+
+function remove(id) {
+  return db("hobbits")
+    .where({ id: id })
+    .del();
 }

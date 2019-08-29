@@ -45,7 +45,7 @@ server.delete("/hobbits/:id", (req, res) => {
   HobbitsDb.remove(id)
     .then(hobbit => {
       if (hobbit) {
-        res.status(200).json(hobbit);
+        res.status(204);
       } else {
         res.status(404).json({
           message: "The hobbit with the specified ID does not exist."
